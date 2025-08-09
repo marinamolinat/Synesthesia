@@ -42,9 +42,58 @@
 <div id="popupOverlay">
     <div id="addPopup">
 
-      <h3>Hello!</h3>
-      <p>This is a simple popup div.</p>
+      <div class="container">
+        <h1>Color Picker</h1>
+        
+        <div class="picker-section">
+            <input type="color" class="color-picker" id="colorPicker" value="#3366cc">
+            <div class="current-color">
+                Current Color: <span id="currentColorCode">#3366cc</span>
+            </div>
+            <button class="clear-btn" onclick="clearColors()">Clear All Colors</button>
+        </div>
+        <div id="colorsContainer">
+            <h3>Selected Colors:</h3>
+            <div class="colors-grid" id="colorsGrid"></div>
+        </div>
     </div>
+    </div>
+
+    <script>
+        let selectedColors = [];
+        const colorPicker = document.getElementById('colorPicker');
+        const currentColorCode = document.getElementById('currentColorCode');
+        const colorsGrid = document.getElementById('colorsGrid');
+        colorPicker.addEventListener('change', function() {
+            const color = this.value;
+            currentColorCode.textContent = color;
+            
+            if (!selectedColors.includes(color)) {
+                selectedColors.push(color);
+                addColorToGrid(color);
+            }
+        });
+           colorPicker.addEventListener('input', function() {
+            currentColorCode.textContent = this.value;
+        });
+        function addColorToGrid(color) {
+            const colorItem = document.createElement('div');
+            colorItem.className = 'color-item';
+            
+            colorItem.innerHTML = `
+                <div class="color-box" style="background-color: ${color}"></div>
+                <div class="color-code">${color}</div>
+            `;
+            
+            colorsGrid.appendChild(colorItem);
+        }
+function clearColors() {
+            selectedColors = [];
+            colorsGrid.innerHTML = '';
+        }
+        selectedColors.push('#3366cc');
+        addColorToGrid('#3366cc');
+    </script>
 
 
 
