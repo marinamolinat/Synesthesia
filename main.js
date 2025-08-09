@@ -32,9 +32,9 @@ submitColor.addEventListener("click", function(){
   const moods = JSON.parse(localStorage.getItem("moods") || "[]");
   moods.push({ mood, date: new Date().toLocaleString() });
   localStorage.setItem("moods", JSON.stringify(moods));
-  
+    popupOverlay.style.display = 'none';
   loadMoods();
-  popupOverlay.styles.display = "none";
+ 
 
 
 
