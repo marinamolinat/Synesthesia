@@ -1,16 +1,27 @@
-#top {
-    display: flex;
-    justify-content: space-between;
-    height: 30%;
-    background-color: red;
+* {
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
 }
 
-#top div {
-    background-color: aqua;
+.main {
+    margin-left: 5%;
+    margin-right: 5%;
 }
-body {
-     margin: 0;       
-  padding: 0;
-  height: 100vh;  
-  width: 100vw;
+
+.main h1 {
+    font-size: 10rem;
+    
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: aqua;
+}
+
+.main h1:hover {
+    font-size: 10rem;
+    color: aqua;
+    
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: aqua;
 }
