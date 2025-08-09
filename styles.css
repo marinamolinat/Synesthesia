@@ -1,0 +1,16 @@
+#top {
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+    background-color: red;
+}
+
+#top div {
+    background-color: aqua;
+}
+body {
+     margin: 0;       
+  padding: 0;
+  height: 100vh;  
+  width: 100vw;
+}
