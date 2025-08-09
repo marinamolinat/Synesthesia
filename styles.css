@@ -4,7 +4,13 @@
     color: white;
 }
 
-
+#submitColor {
+    background-color: aqua;
+    border-color: white;
+    border-radius: 25px;
+    color: black;
+    padding: 5px;
+}
 
 body {
      margin: 0;       
@@ -90,7 +96,7 @@ body {
     position: fixed;
     left: 50%;
     top: 50%;
-    padding: 5px;
+    padding: 50px;
     transform: translate(-50%, -50%);
 
 
@@ -134,4 +140,5 @@ body {
     color: white;
     font-weight: bold;
     /* Remove width and margin, grid handles spacing */
+    padding: 15px;
 }
