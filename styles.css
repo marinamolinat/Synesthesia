@@ -76,22 +76,18 @@ body {
 #addPopup {
   position: fixed;
   background-color: rgb(213, 111, 111);
-  bottom: 20px; /* distance from bottom */
-  right: 20px;
+  top: 50%;         /* Center vertically */
+  left: 50%;        /* Center horizontally */
+  transform: translate(-50%, -50%); /* Shift back by half its size */
   height: 100px;
   width: 100px;
   border-radius: 25px;
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0;        /* Remove margin for true centering */
+  z-index: 2000;  
+
 }
-#addPopup .container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+
 #addPopup h1 {
   text-align: center;
   margin-bottom: 30px;
