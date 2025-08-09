@@ -8,7 +8,6 @@ const addButton = document.getElementById("add");
 const submitColor = document.getElementById("submitColor");
 const logsGrid = document.getElementById("logsGrid");
 loadMoods();
-const cal = new CalHeatmap();
 
 
 
@@ -35,6 +34,7 @@ submitColor.addEventListener("click", function(){
   localStorage.setItem("moods", JSON.stringify(moods));
   
   loadMoods();
+  popupOverlay.styles.display = "none";
 
 
 
@@ -52,29 +52,6 @@ function loadMoods() {
  
 }
 
-  cal.init({
-    itemSelector: "#cal-heatmap",
-    domain: "month",
-    subDomain: "day",
-    data: calData,
-    start: new Date("2025-08-01"),
-    range: 1,
-    cellSize: 20,
-    legend: [1],  // We just use 1 intensity level
-    afterLoadData: (data) => {
-      // data is what cal-heatmap got, but we will override colors later
-      return data;
-    },
-    onComplete: () => {
-      // After rendering, color the cells based on your stored colors
-      document.querySelectorAll("#cal-heatmap .graph-subdomain").forEach(cell => {
-        const dateStr = cell.getAttribute('data-date'); // e.g. '2025-08-01'
-        if (dateStr && storedData[dateStr]) {
-          cell.style.fill = storedData[dateStr];  // set the color from your data
-        }
-      });
-    }
-  });
 
 
 loadMoods();
