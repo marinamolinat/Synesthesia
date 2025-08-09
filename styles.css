@@ -79,9 +79,26 @@ body {
 }
 
 #addPopup {
+    border-color: white;
+    border-style: solid;
+    border-radius: 10px;
     position: fixed;
     right: 50%;
     bottom: 50%;
-    display: none;
+    padding: 5px;
+
 
 }
+
+#popupOverlay {
+      display: none; /* hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5); /* translucent black */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
