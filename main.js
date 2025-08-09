@@ -2,12 +2,13 @@
 //render(container);
 
 
-
 //pop up
 const popupOverlay = document.getElementById("popupOverlay");
 const addButton = document.getElementById("add");
 const submitColor = document.getElementById("submitColor");
 const logsGrid = document.getElementById("logsGrid");
+loadMoods();
+const cal = new CalHeatmap();
 
 
 
@@ -50,7 +51,6 @@ function loadMoods() {
   .join("");
  
 }
-const cal = new CalHeatMap();
 
   cal.init({
     itemSelector: "#cal-heatmap",
